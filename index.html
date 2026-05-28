@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>ProApp - Votre catalogue de logiciels</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <button class="theme-toggle" id=\"themeBtn\">🌙 Mode Sombre</button>
+        <h1>ProApp</h1>
+        <p>Le meilleur endroit pour télécharger vos logiciels préférés !</p>
+        <input type="text" id="search" class="search-bar" placeholder="Rechercher des applications (ex: Chrome, Discord, Steam...)">
+    </header>
+
+    <div style="display: flex;">
+        
+        <aside class="sidebar">
+            <h3>Catégories</h3>
+            <ul>
+                <li><button class="filter-btn active" data-cat="tous">Tout afficher</button></li>
+                <li><button class="filter-btn" data-cat="internet">Internet</button></li>
+                <li><button class="filter-btn" data-cat="multimédia">Multimédia</button></li>
+                <li><button class="filter-btn" data-cat="discussion">Discussion</button></li>
+                <li><button class="filter-btn" data-cat="jeux vidéo">Jeux Vidéo</button></li>
+                <li><button class="filter-btn" data-cat="musique">Musique</button></li>
+                <li><button class="filter-btn" data-cat="sécurité">Sécurité</button></li>
+            </ul>
+        </aside>
+
+        <section class="content-grid">
+            
+            <article>
+                <span class="badge">Internet</span>
+                <img src="file:///C:/Users/DEPANNAGE/Downloads/Google%20Chrome.png" alt="Logo Chrome">
+                <h2>Google Chrome</h2>
+                <p>Le navigateur web le plus populaire, rapide et sécurisé par Google.</p>
+                <a href="Chrome.html">Voir la fiche</a>
+            </article>
+
+            <article>
+                <span class="badge">Discussion</span>
+                <img src="file:///C:/Users/DEPANNAGE/OneDrive%20-%20Eduprovence/Documents/ProApp/Discord.png" alt="Logo Discord">
+                <h2>Discord</h2>
+                <p>Idéal pour discuter en salon vocal et textuel avec vos communautés.</p>
+                <a href="discord.html">Voir la fiche</a>
+            </article>
+
+            <article>
+                <span class="badge">Jeux Vidéo</span>
+                <img src="file:///C:/Users/DEPANNAGE/Downloads/Capture%20d'%C3%A9cran%202026-05-22%20092009.png" alt="Logo Steam">
+                <h2>Steam</h2>
+                <p>La plateforme incontournable pour acheter et lancer tous vos jeux PC.</p>
+                <a href="steam.html">Voir la fiche</a>
+            </article>
+
+            <article>
+                <span class="badge">Musique</span>
+                <img src="file:///C:/Users/DEPANNAGE/Downloads/Capture%20d'%C3%A9cran%202026-05-21%20145048.png" alt="Logo Spotify">
+                <h2>Spotify</h2>
+                <p>Écoutez des millions de musiques et de podcasts en streaming.</p>
+                <a href="spotify.html">Voir la fiche</a>
+            </article>
+
+            <article>
+                <span class="badge">Internet</span>
+                <img src="file:///C:/Users/DEPANNAGE/Downloads/edge.png" alt="Logo Edge">
+                <h2>Microsoft Edge</h2>
+                <p>Le navigateur rapide de Microsoft avec l'intelligence artificielle Copilot.</p>
+                <a href="edge.html">Voir la fiche</a>
+            </article>
+
+            <article>
+                <span class="badge">Jeux Vidéo</span>
+                <img src="file:///C:/Users/DEPANNAGE/OneDrive%20-%20Eduprovence/Images/Captures%20d%E2%80%99%C3%A9cran/Capture%20d'%C3%A9cran%202026-05-25%20152130.png" alt="Logo LDPlayer">
+                <h2>LDPlayer</h2>
+                <p>Un émulateur Android super léger pour jouer à vos jeux mobiles sur PC.</p>
+                <a href="ldplayer.html">Voir la fiche</a>
+            </article>
+
+            <article>
+                <span class="badge">Jeux Vidéo</span>
+                <img src="file:///C:/Users/DEPANNAGE/OneDrive%20-%20Eduprovence/Images/Captures%20d%E2%80%99%C3%A9cran/Capture%20d'%C3%A9cran%202026-05-25%20153638.png" alt="Logo Minecraft">
+                <h2>Minecraft Education</h2>
+                <p>Explorez, construisez et apprenez à coder dans l'univers de Minecraft.</p>
+                <a href="minecraft-education.html">Voir la fiche</a>
+            </article>
+
+            <article>
+                <span class="badge">Jeux Vidéo</span>
+                <img src="file:///C:/Users/DEPANNAGE/OneDrive%20-%20Eduprovence/Images/Captures%20d%E2%80%99%C3%A9cran/Capture%20d'%C3%A9cran%202026-05-25%20154613.png" alt="Logo Brawl Stars">
+                <h2>Brawl Stars</h2>
+                <p>Un jeu de combat multijoueur en arène 3v3 ultra dynamique.</p>
+                <a href="brawlstars.html">Voir la fiche</a>
+            </article>
+
+            <article>
+                <span class="badge">Jeux Vidéo</span>
+                <img src="file:///C:/Users/DEPANNAGE/OneDrive%20-%20Eduprovence/Images/Captures%20d%E2%80%99%C3%A9cran/Capture%20d'%C3%A9cran%202026-05-25%20155235.png" alt="Logo Geometry Dash">
+                <h2>Geometry Dash</h2>
+                <p>Franchissez des obstacles géométriques au rythme d'une musique survoltée.</p>
+                <a href="geometry-dash.html">Voir la fiche</a>
+            </article>
+
+        </section>
+    </div>
+
+    <script>
+        const themeBtn = document.getElementById('themeBtn');
+        const searchInput = document.getElementById('search');
+        const articles = document.querySelectorAll('article');
+
+        // Gestion du Mode Sombre
+        themeBtn.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                themeBtn.textContent = "☀️ Mode Clair";
+            } else {
+                themeBtn.textContent = "🌙 Mode Sombre";
+            }
+        });
+
+        // Gestion de la barre de recherche
+        searchInput.addEventListener('input', function() {
+            const searchText = this.value.toLowerCase();
+            const activeCategory = document.querySelector('.filter-btn.active').getAttribute('data-cat');
+
+            articles.forEach(article => {
+                const title = article.querySelector('h2').textContent.toLowerCase();
+                const badgeText = article.querySelector('.badge').textContent.toLowerCase().trim();
+
+                const matchesSearch = title.includes(searchText);
+                const matchesCategory = (activeCategory === "tous" || badgeText === activeCategory);
+
+                if (matchesSearch && matchesCategory) {
+                    article.style.display = "flex";
+                } else {
+                    article.style.display = "none";
+                }
+            });
+        });
+
+        // Gestion des boutons de filtres (Catégories)
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                this.classList.add('active');
+
+                const selectedCategory = this.getAttribute('data-cat');
+                const searchText = searchInput.value.toLowerCase();
+
+                articles.forEach(article => {
+                    const title = article.querySelector('h2').textContent.toLowerCase();
+                    const badgeText = article.querySelector('.badge').textContent.toLowerCase().trim();
+
+                    const matchesSearch = title.includes(searchText);
+                    const matchesCategory = (selectedCategory === "tous" || badgeText === selectedCategory);
+
+                    if (matchesSearch && matchesCategory) {
+                        article.style.display = "flex";
+                    } else {
+                        article.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
